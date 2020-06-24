@@ -131,3 +131,42 @@ since the operation inside the loop is * or /
 #         return 1 + rec(n-1)
 
 # print(rec(8))
+
+
+                                       #Stack
+'''
+
+you can think of stack as array, the first item you put in the array 
+would the last one who is gonna go out
+
+
+
+
+[
+    |c|
+    |B|
+    |A|
+]
+
+since the A is the first one that been inserted inside the stack 
+then it would the last one that gonna get out(called)
+FILO
+or 
+LIFO
+'''
+
+                    # Array based implementation 
+'''
+The stack has 4 main functions 
+1.push() 
+is to add value to the stack
+
+2.pop()
+is to delete the last one in the stack(top)
+
+3.getTop()
+is to get the last value been insterted in the stack(top)
+
+4.isEmpty()
+is to check if the stack is empty
+'''
