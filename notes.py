@@ -200,10 +200,10 @@ class Node:
 '''
 
 
-# class Node:
-#     def __init__(self, item):
-#         self.item = item
-#         self.next = None
+class Node:
+    def __init__(self, item):
+        self.item = item
+        self.next = None
 
 
 class LinkedList:
@@ -239,6 +239,7 @@ class LinkedList:
             # node in the list
             self.tail = newNode
 
+        ##################### linked_list
 
 # a = [1,2,3,4]
 # b = [1,3,5,6]
@@ -258,23 +259,3 @@ class LinkedList:
 #         arr[j+1] = last
 
 # print(insertSortArr([2,5,2,6,7,3,4],5))
-
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
-
-
-class LinkedList:
-    def __init__(self, head=None, tail=None):
-        self.head = head
-        self.tail = tail
-
-    def insert_first(self, value):
-        newNode = Node(value)
-        if not self.head:
-            self.head = newNode
-            newNode.next = None
-        else:
-            newNode.next = self.head
-            self.head = newNode
