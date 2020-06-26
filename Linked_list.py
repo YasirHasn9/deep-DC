@@ -9,6 +9,7 @@
     last node in the list called TAIL
 '''
 
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -53,28 +54,45 @@ class LinkedList:
         # to add the new node to the list
         last_node.next = new_node
 
-
-    def prepend(self,data):
+    def prepend(self, data):
         # making a new node
         new_node = Node(data)
-        
+
         # making sure that we have an item in the list
         if self.head:
-            # make make the next of the new node points to the 
+            # make make the next of the new node points to the
             # self.head
             new_node.next = self.head
-            
+
             # and make the self.head == the new_node
             self.head = new_node
+
+    def insert_after_node(self, prev_node, data):
+        # making sure that the prev_node is exited and 
+        # next of it point to something
+        if not prev_node:
+            print("There no pervious node in the list")
+            return
+
+# make new node
+        new_node = Node(data)
+        # make the next of the new node points to the node 
+        # that the previous node.next is poiniting to 
+        new_node.next = prev_node.next
+
+        # now the new node is pointing to the same node that the pervious node 
+        # is pointing 
+        # to change that we need to tell the pervious node to point to 
+        # the new node 
+        prev_node.next = new_node
 
 
 l = LinkedList()
 l.append("A")
 # print(l.head.data)
-l.append("B")
+# l.append("B")
 l.append("C")
 l.append("D")
-l.print_list()
-print("one")
-l.prepaned("E")
+l.append("E")
+l.insert_after_node(l.head.next, "B")
 l.print_list()
