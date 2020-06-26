@@ -24,8 +24,8 @@ class LinkedList:
         current_node = self.head
         while current_node:
             print(current_node.data)
-            # here each time we loop we are moving our current to
-            # next node until we reached the next we it points to None
+            # here each time we loop we are moving our current(head) to
+            # next node until we reached the (head).next where it points to None
             current_node = current_node.next
 
     def append(self, data):  # add to the end of the list
@@ -54,11 +54,27 @@ class LinkedList:
         last_node.next = new_node
 
 
+    def prepend(self,data):
+        # making a new node
+        new_node = Node(data)
+        
+        # making sure that we have an item in the list
+        if self.head:
+            # make make the next of the new node points to the 
+            # self.head
+            new_node.next = self.head
+            
+            # and make the self.head == the new_node
+            self.head = new_node
+
+
 l = LinkedList()
 l.append("A")
 # print(l.head.data)
 l.append("B")
 l.append("C")
 l.append("D")
-print(l.head.data)
+l.print_list()
+print("one")
+l.prepaned("E")
 l.print_list()
